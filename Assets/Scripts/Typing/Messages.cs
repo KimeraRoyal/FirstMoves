@@ -17,12 +17,18 @@ namespace Kitty
             m_text = GetComponent<TMP_Text>();
             
             m_window.OnMessageSent.AddListener(AddMessage);
+            m_window.OnClearMessages.AddListener(ClearMessages);
         }
 
         private void AddMessage(string _message)
         {
-            m_text.text += $"{(string.IsNullOrEmpty(m_text.text) ? "" : "\n")}> {_message}";
+            m_text.text += ($"{(string.IsNullOrEmpty(m_text.text) ? "" : "\n")}{_message}");
             // TODO: Typewriter effect from console
+        }
+
+        private void ClearMessages()
+        {
+            m_text.text = "";
         }
     }
 }

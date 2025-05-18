@@ -18,7 +18,7 @@ MonoBehaviour:
   _Exclusions: []
   _Direction: 2
   _Trigger: 2
-  _LastExecuted: 638831205113206048
+  _LastExecuted: 638832084773474361
   _SynchronizedPaths:
   - Coremera.asmdef
   - Coremera.asmdef.meta
@@ -36,3 +36,9 @@ MonoBehaviour:
   - Interaction/Mouse/Mouse2D.cs.meta
   - Interaction/Mouse/Mouse3D.cs
   - Interaction/Mouse/Mouse3D.cs.meta
+  - Interaction/Mouse/MouseUI.cs
+  - Interaction/Mouse/MouseUI.cs.meta
+  - Interaction/Mouse/MouseWorld.cs
+  - Interaction/Mouse/MouseWorld.cs.meta
+  - Interaction/Mouse/UIMouseRaycaster.cs
+  - Interaction/Mouse/UIMouseRaycaster.cs.meta

@@ -1,7 +1,7 @@
 {
     "name": "Kitty.Scene",
     "rootNamespace": "Kitty",
-    "references": [],
+    "references": ["GUID:2d10c5aa3b860924b85380ffcb737405","GUID:927ea392459afe34dba4298f75b70517"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

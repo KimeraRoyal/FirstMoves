@@ -1,9 +1,17 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CyberAvebury
 {
-    public class Mouse3D : Mouse
+    public class Mouse3D : MouseWorld
     {
+        public UnityEvent<Vector3> OnMouseClickedWorld;
+        
+        protected override void ClickWorld(Vector3 _mouseWorldPos)
+        {
+            OnMouseClickedWorld?.Invoke(_mouseWorldPos);
+        }
+        
         protected override Transform Cast(Vector3 _mousePos)
         {
             var ray = Camera.ScreenPointToRay(_mousePos);

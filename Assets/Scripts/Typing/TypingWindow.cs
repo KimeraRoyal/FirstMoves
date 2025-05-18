@@ -19,6 +19,7 @@ namespace Kitty
         }
 
         public UnityEvent<string> OnMessageSent;
+        public UnityEvent OnClearMessages;
 
         private void Awake()
         {
@@ -32,10 +33,22 @@ namespace Kitty
             m_canvasGroup.interactable = m_shown;
         }
 
-        public void SendCurrentMessage()
+        public void TypeMessage(string _message)
+        {
+            if(string.IsNullOrEmpty(_message)) { return; }
+            OnMessageSent?.Invoke(_message);
+        }
+
+        public void TypeCurrentMessage()
         {
             if(string.IsNullOrEmpty(m_input.text)) { return; }
-            OnMessageSent?.Invoke(m_input.text);
+            TypeMessage($"> {m_input.text}");
+            m_input.text = "";
+        }
+
+        public void ClearMessages()
+        {
+            OnClearMessages?.Invoke();
             m_input.text = "";
         }
 
@@ -50,6 +63,7 @@ namespace Kitty
 
         private void UpdateShown(bool _show)
         {
+            // TODO: Generic class to open window when clicking objects
             // TODO: Move to generic window class
             // TODO: Block player movement while shown
             if(m_shown == _show) { return; }
