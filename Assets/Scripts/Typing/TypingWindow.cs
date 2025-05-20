@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -10,12 +11,13 @@ namespace Kitty
         private TMP_InputField m_input;
         private CanvasGroup m_canvasGroup;
 
+        private bool m_shouldShow;
         private bool m_shown;
 
         public bool Shown
         {
-            get => m_shown;
-            set => UpdateShown(value);
+            get => m_shouldShow;
+            set => m_shouldShow = value;
         }
 
         public UnityEvent<string> OnMessageSent;
@@ -31,6 +33,12 @@ namespace Kitty
         {
             m_canvasGroup.alpha = m_shown ? 1.0f : 0.0f;
             m_canvasGroup.interactable = m_shown;
+            m_canvasGroup.blocksRaycasts = m_shown;
+        }
+
+        private void LateUpdate()
+        {
+            UpdateShown();
         }
 
         public void TypeMessage(string _message)
@@ -53,24 +61,25 @@ namespace Kitty
         }
 
         [Button("Show")]
-        public void Show() => UpdateShown(true);
-        
-        [Button("Hide")]
-        public void Hide() => UpdateShown(false);
-        
-        [Button("Toggle")]
-        public void Toggle() => UpdateShown(!m_shown);
+        public void Show() => m_shouldShow = true;
 
-        private void UpdateShown(bool _show)
+        [Button("Hide")]
+        public void Hide() => m_shouldShow = false;
+
+        [Button("Toggle")]
+        public void Toggle() => m_shouldShow = !m_shown;
+
+        private void UpdateShown()
         {
             // TODO: Generic class to open window when clicking objects
             // TODO: Move to generic window class
             // TODO: Block player movement while shown
-            if(m_shown == _show) { return; }
-            m_shown = _show;
+            if(m_shown == m_shouldShow) { return; }
+            m_shown = m_shouldShow;
             
             m_canvasGroup.alpha = m_shown ? 1.0f : 0.0f;
             m_canvasGroup.interactable = m_shown;
+            m_canvasGroup.blocksRaycasts = m_shown;
         }
     }
 }

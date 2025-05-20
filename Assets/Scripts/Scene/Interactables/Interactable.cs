@@ -4,15 +4,13 @@ using UnityEngine;
 namespace Kitty
 {
     [RequireComponent(typeof(ClickableObject))]
-    public class Interactable : MonoBehaviour
+    public abstract class Interactable : MonoBehaviour
     {
         private TypingWindow m_typingWindow;
         
         private ClickableObject m_clickable;
 
-        [SerializeField] private InteractableData m_data;
-
-        private void Awake()
+        protected virtual void Awake()
         {
             m_typingWindow = FindAnyObjectByType<TypingWindow>();
             
@@ -24,9 +22,15 @@ namespace Kitty
         private void OnClicked()
         {
             m_typingWindow.Show();
-            
+
             m_typingWindow.ClearMessages();
-            m_typingWindow.TypeMessage(m_data.Prompt);
+            var commands = GetCommands();
+            foreach (var command in commands)
+            {
+                m_typingWindow.TypeMessage(command);
+            }
         }
+
+        protected abstract string[] GetCommands();
     }
 }
