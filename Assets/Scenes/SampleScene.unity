@@ -7382,6 +7382,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room
       objectReference: {fileID: 0}
+    - target: {fileID: 1103432868197591185, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.29532465
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103432868197591185, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.90672195
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103432868197591185, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.09323698
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103432868197591185, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.28626126
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984256356486301803, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.27416518
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984256356486301803, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.92068136
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984256356486301803, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.07928739
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984256356486301803, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.26625708
+      objectReference: {fileID: 0}
     - target: {fileID: 6901453114667078339, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -7399,6 +7431,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6479137908180158667, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1355257964}
+    - targetCorrespondingSourceObject: {fileID: -7067917022921033367, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1548441750}
+    - targetCorrespondingSourceObject: {fileID: -4791695511153422088, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1548441749}
     - targetCorrespondingSourceObject: {fileID: 8493015188241380710, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1887170070}
@@ -8316,6 +8354,44 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6317106008045385693, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+--- !u!1 &1548441747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4791695511153422088, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+  m_PrefabInstance: {fileID: 1355257961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1548441748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7067917022921033367, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+  m_PrefabInstance: {fileID: 1355257961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1548441749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548441747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43174510e40e73498584f5f1d0f7119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_target: {fileID: 519420032}
+  m_rotationOffset: {x: -90, y: 0, z: 0}
+--- !u!114 &1548441750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548441748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43174510e40e73498584f5f1d0f7119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_target: {fileID: 519420032}
+  m_rotationOffset: {x: -90, y: 0, z: 0}
 --- !u!1 &1568651798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1496928697027173593, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}

@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Bowl
+    second: {fileID: 2100000, guid: 168b689cb09145847845abdede426159, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Canvas Print
     second: {fileID: 2100000, guid: cf0ea598bdc89d44b8a05ff1bff35a92, type: 2}
   - first:
