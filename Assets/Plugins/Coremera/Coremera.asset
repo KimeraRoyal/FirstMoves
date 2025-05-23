@@ -18,8 +18,12 @@ MonoBehaviour:
   _Exclusions: []
   _Direction: 2
   _Trigger: 2
-  _LastExecuted: 638833007712157389
+  _LastExecuted: 638835433284509738
   _SynchronizedPaths:
+  - Billboard.cs
+  - Billboard.cs.meta
+  - Billboard2D.cs
+  - Billboard2D.cs.meta
   - Coremera.asmdef
   - Coremera.asmdef.meta
   - Interaction
