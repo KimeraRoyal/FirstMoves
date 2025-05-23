@@ -37,6 +37,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Fridge
+    second: {fileID: 2100000, guid: ba83f8caa0ba4394da0125745d19dd29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Marble
     second: {fileID: 2100000, guid: e51715fa588ebe141881adcd1e224e69, type: 2}
   - first:
