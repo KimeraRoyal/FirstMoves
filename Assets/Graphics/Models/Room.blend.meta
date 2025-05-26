@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Broom
+    second: {fileID: 2100000, guid: 1c348609652c73b46bee1531b24bd97e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Canvas Print
     second: {fileID: 2100000, guid: cf0ea598bdc89d44b8a05ff1bff35a92, type: 2}
   - first:
@@ -19,6 +24,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Carpet
     second: {fileID: 2100000, guid: 5af7e3b5bf9fa184bab90b5a4fea4159, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceramic
+    second: {fileID: 2100000, guid: 6913732892a43064592e365f12d4e1fc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
