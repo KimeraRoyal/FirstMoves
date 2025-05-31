@@ -18,8 +18,10 @@ MonoBehaviour:
   _Exclusions: []
   _Direction: 2
   _Trigger: 2
-  _LastExecuted: 638836010417651080
+  _LastExecuted: 638843150308075339
   _SynchronizedPaths:
+  - AlwaysFaceDirection.cs
+  - AlwaysFaceDirection.cs.meta
   - Billboard.cs
   - Billboard.cs.meta
   - BillboardOnAxis.cs
