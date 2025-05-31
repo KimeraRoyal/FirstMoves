@@ -21,6 +21,7 @@ namespace Kitty
         }
 
         public UnityEvent<string> OnMessageSent;
+        public UnityEvent<string> OnCurrentTypedMessageSent;
         public UnityEvent OnClearMessages;
 
         private void Awake()
@@ -50,7 +51,10 @@ namespace Kitty
         public void TypeCurrentMessage()
         {
             if(string.IsNullOrEmpty(m_input.text)) { return; }
+            
             TypeMessage($"> {m_input.text}");
+            OnCurrentTypedMessageSent?.Invoke(m_input.text);
+            
             m_input.text = "";
         }
 

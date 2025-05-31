@@ -1992,6 +1992,65 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9999998, y: 0.955, z: 2.2825}
   m_Center: {x: 0.00000005658134, y: -0.035, z: 1.14125}
+--- !u!114 &888299304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888299296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1a2366cf58d1547a24d9edf5c470d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_openCommand:
+    m_command: I want to open the fridge
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls: []
+  m_closeCommand:
+    m_command: I want to close the fridge
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &888299305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888299296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79aba3316ca0dc0408b950fbe3fd138c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClicked:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!95 &888299306
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888299296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c30d2aa3ebedc243b882514577ead73, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &899912906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -89615770901426438, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
@@ -7586,6 +7645,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.96745956
       objectReference: {fileID: 0}
+    - target: {fileID: 3024621452840433635, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3984256356486301803, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.49186915
@@ -7606,6 +7669,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4212334546653479099, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587583097604799658, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6901453114667078339, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -7625,6 +7696,10 @@ PrefabInstance:
     - target: {fileID: 7074502709743855597, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.9631655
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157769120288765607, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8496569710444500346, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       propertyPath: m_IsActive
@@ -7664,6 +7739,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 888299300}
+    - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 888299306}
+    - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 888299305}
+    - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 888299304}
     - targetCorrespondingSourceObject: {fileID: -89615770901426438, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 899912910}
@@ -7872,6 +7956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1406129476}
   - component: {fileID: 1406129477}
+  - component: {fileID: 1406129478}
   m_Layer: 0
   m_Name: Typing Window
   m_TagString: Untagged
@@ -7910,9 +7995,24 @@ MonoBehaviour:
   OnMessageSent:
     m_PersistentCalls:
       m_Calls: []
+  OnCurrentTypedMessageSent:
+    m_PersistentCalls:
+      m_Calls: []
   OnClearMessages:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1406129478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406129475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a7ff92b52a4d15835d19e3a7af2de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1444155121
 GameObject:
   m_ObjectHideFlags: 0

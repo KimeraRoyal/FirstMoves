@@ -4,9 +4,9 @@ namespace Kitty
 {
     public class SimpleInteractable : Interactable
     {
-        [SerializeField] private string m_command = "Command";
+        [SerializeField] private InteractionCommand m_command;
 
-        protected override string[] GetCommands()
+        protected override InteractionCommand[] GetCommands()
             => new []{ m_command };
     }
 }

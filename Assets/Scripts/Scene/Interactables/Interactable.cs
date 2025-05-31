@@ -6,13 +6,13 @@ namespace Kitty
     [RequireComponent(typeof(ClickableObject))]
     public abstract class Interactable : MonoBehaviour
     {
-        private TypingWindow m_typingWindow;
+        private TypingInteractions m_interactions;
         
         private ClickableObject m_clickable;
 
         protected virtual void Awake()
         {
-            m_typingWindow = FindAnyObjectByType<TypingWindow>();
+            m_interactions = FindAnyObjectByType<TypingInteractions>();
             
             m_clickable = GetComponent<ClickableObject>();
             
@@ -20,17 +20,8 @@ namespace Kitty
         }
 
         private void OnClicked()
-        {
-            m_typingWindow.Show();
+            => m_interactions.AssignCommands(GetCommands());
 
-            m_typingWindow.ClearMessages();
-            var commands = GetCommands();
-            foreach (var command in commands)
-            {
-                m_typingWindow.TypeMessage(command);
-            }
-        }
-
-        protected abstract string[] GetCommands();
+        protected abstract InteractionCommand[] GetCommands();
     }
 }

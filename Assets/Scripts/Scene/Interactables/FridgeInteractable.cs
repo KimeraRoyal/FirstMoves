@@ -11,8 +11,8 @@ namespace Kitty
         
         private Animator m_animator;
 
-        [SerializeField] private string m_openCommand = "Open Command";
-        [SerializeField] private string m_closeCommand = "Close Command";
+        [SerializeField] private InteractionCommand m_openCommand;
+        [SerializeField] private InteractionCommand m_closeCommand;
         
         private bool m_isOpen;
 
@@ -23,6 +23,9 @@ namespace Kitty
             base.Awake();
             
             m_animator = GetComponent<Animator>();
+            
+            m_openCommand.OnCommandExecuted.AddListener(Open);
+            m_closeCommand.OnCommandExecuted.AddListener(Close);
         }
 
         [Button("Open")]
@@ -41,7 +44,7 @@ namespace Kitty
             m_animator.SetBool(s_openHash, m_isOpen);
         }
 
-        protected override string[] GetCommands()
+        protected override InteractionCommand[] GetCommands()
             => new[] { m_isOpen ? m_closeCommand : m_openCommand };
     }
 }
