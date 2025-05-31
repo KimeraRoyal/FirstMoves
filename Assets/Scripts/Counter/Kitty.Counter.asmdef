@@ -2,7 +2,8 @@
     "name": "Kitty.Counter",
     "rootNamespace": "Kitty",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:ab139dab1316f984bb49cd3af617fe05"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
