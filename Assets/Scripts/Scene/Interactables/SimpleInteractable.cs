@@ -4,9 +4,17 @@ namespace Kitty
 {
     public class SimpleInteractable : Interactable
     {
-        [SerializeField] private InteractionCommand m_command;
+        [SerializeField] private InteractionCommand[] m_commands = new InteractionCommand[1];
 
         protected override InteractionCommand[] GetCommands()
-            => new []{ m_command };
+            => m_commands;
+
+        private void OnValidate()
+        {
+            if(m_commands is { Length: > 0 }) { return; }
+
+            m_commands = new InteractionCommand[1];
+            Debug.LogWarning("Cannot have empty interaction list");
+        }
     }
 }

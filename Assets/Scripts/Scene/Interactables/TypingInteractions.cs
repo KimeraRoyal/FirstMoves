@@ -17,6 +17,12 @@ namespace Kitty
 
         public void AssignCommands(InteractionCommand[] _commands)
         {
+            if (_commands == null || _commands.Length < 1)
+            {
+                Debug.LogWarning("Invalid interaction command list supplied");
+                return;
+            }
+            
             m_window.Show();
             m_window.ClearMessages();
             

@@ -586,8 +586,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dayCountdownLength: 5
-  m_minCountdownPeriod: 7
-  m_maxCountdownPeriod: 9
+  m_minCountdownPeriod: 5
+  m_maxCountdownPeriod: 5
   OnStateUpdated:
     m_PersistentCalls:
       m_Calls: []
@@ -947,9 +947,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: f5284df8d3430cc4787822c080612d75, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f5284df8d3430cc4787822c080612d75, type: 3}
       propertyPath: m_Name
       value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5284df8d3430cc4787822c080612d75, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1545,7 +1553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 764232939}
   - component: {fileID: 764232940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cat_Outline_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7605,6 +7613,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 91d2683eed3c07f47ba7d0f6675c339e, type: 2}
+    - target: {fileID: -1129699859624134021, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -464797657134308742, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -7677,6 +7689,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6479137908180158667, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6901453114667078339, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -7718,6 +7734,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6479137908180158667, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1355257964}
+    - targetCorrespondingSourceObject: {fileID: 6479137908180158667, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1398478257}
+    - targetCorrespondingSourceObject: {fileID: 6479137908180158667, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1355257970}
     - targetCorrespondingSourceObject: {fileID: 8493015188241380710, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1887170070}
@@ -7820,6 +7842,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 519420032}
   m_rotationOffset: {x: -90, y: 180, z: 0}
+--- !u!114 &1355257970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355257963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_commands:
+  - m_command: I don't want to be awake any more
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 484886385}
+          m_TargetAssemblyTypeName: Kitty.DayCounter, Kitty.Counter
+          m_MethodName: Increment
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!65 &1355257971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7946,6 +7997,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!114 &1398478257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355257963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79aba3316ca0dc0408b950fbe3fd138c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClicked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1406129475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8292,7 +8358,7 @@ GameObject:
   - component: {fileID: 1482556209}
   - component: {fileID: 1482556210}
   - component: {fileID: 1482556211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8780,7 +8846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1551706791}
   - component: {fileID: 1551706792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cat_Body_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8869,7 +8935,10 @@ GameObject:
   - component: {fileID: 1556528952}
   - component: {fileID: 1556528951}
   - component: {fileID: 1556528950}
-  m_Layer: 0
+  - component: {fileID: 1556528954}
+  - component: {fileID: 1556528953}
+  - component: {fileID: 1556528955}
+  m_Layer: 6
   m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8982,6 +9051,58 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.3
   m_Center: {x: 0, y: -0.05, z: 0}
+--- !u!114 &1556528953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556528947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_commands:
+  - m_command: I like my cat a lot
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls: []
+  - m_command: I would like to pet my cat
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls: []
+  - m_command: My cat is nice
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1556528954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556528947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79aba3316ca0dc0408b950fbe3fd138c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClicked:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1556528955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556528947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804013a805dfeaf40a0802b42693d94d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1582870382 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2994541649544654590, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
@@ -9300,7 +9421,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 20
-  m_CharacterLimit: 32
+  m_CharacterLimit: 64
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
