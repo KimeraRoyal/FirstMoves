@@ -18,6 +18,10 @@ namespace Kitty
         [ShowInInspector] [ReadOnly] private int m_currentDay;
         [ShowInInspector] [ReadOnly] private int m_displayDate;
 
+        public CounterState CurrentState => m_state;
+
+        public int CurrentDisplayDate => m_displayDate;
+
         public UnityEvent<CounterState> OnStateUpdated;
         public UnityEvent<int> OnDisplayDateUpdated;
 
