@@ -12,7 +12,8 @@ namespace Kitty
 
         private Image m_image;
 
-        [SerializeField] private float m_fadeDuration = 0.2f;
+        [SerializeField] private float m_fadeInDuration = 0.2f;
+        [SerializeField] private float m_fadeOutDuration = 0.2f;
         [SerializeField] private Ease m_fadeEase = Ease.Linear;
         [SerializeField] private float m_fadeHoldDuration = 0.1f;
         
@@ -40,11 +41,11 @@ namespace Kitty
             m_sequence = DOTween.Sequence();
 
             m_image.raycastTarget = true;
-            m_sequence.Append(m_image.DOFade(1.0f, m_fadeDuration).SetEase(m_fadeEase));
+            m_sequence.Append(m_image.DOFade(1.0f, m_fadeInDuration).SetEase(m_fadeEase));
             m_sequence.AppendCallback(NextDay);
             m_sequence.AppendInterval(m_fadeHoldDuration);
             m_sequence.AppendCallback(ReleaseFade);
-            m_sequence.Append(m_image.DOFade(0.0f, m_fadeDuration).SetEase(m_fadeEase));
+            m_sequence.Append(m_image.DOFade(0.0f, m_fadeOutDuration).SetEase(m_fadeEase));
             
         }
 
