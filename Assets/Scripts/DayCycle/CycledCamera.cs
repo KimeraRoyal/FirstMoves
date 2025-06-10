@@ -6,7 +6,7 @@ namespace Kitty
     [RequireComponent(typeof(Camera))]
     public class CycledCamera : MonoBehaviour
     {
-        private DayCycle m_dayCycle;
+        private DayNightCycle m_dayNightCycle;
 
         private Camera m_camera;
 
@@ -14,8 +14,8 @@ namespace Kitty
 
         private void Awake()
         {
-            m_dayCycle = FindAnyObjectByType<DayCycle>();
-            m_dayCycle.OnTimeChanged.AddListener(OnTimeChanged);
+            m_dayNightCycle = FindAnyObjectByType<DayNightCycle>();
+            m_dayNightCycle.OnTimeChanged.AddListener(OnTimeChanged);
 
             m_camera = GetComponent<Camera>();
         }

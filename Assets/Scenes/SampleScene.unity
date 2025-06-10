@@ -1227,10 +1227,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6be05138593d844ba677e78f83d5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_currentTime: 1
+  m_currentTime: 0
   OnTimeChanged:
     m_PersistentCalls:
       m_Calls: []
+  OnDayCycled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 484886385}
+        m_TargetAssemblyTypeName: Kitty.DayCounter, Kitty.Counter
+        m_MethodName: Increment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &656581486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,6 +2219,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &888299310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888299296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a92fb1c8ea3c840955c7c7c79e324c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_colors:
+  - {r: 0.14, g: 0.14, b: 0.14, a: 0}
+  - {r: 0.14, g: 0.14, b: 0.14, a: 0}
+  - {r: 0.14117648, g: 0.08630589, b: 0.079058826, a: 0}
+  - {r: 0.027999999, g: 0.027999999, b: 0.027999999, a: 0}
 --- !u!1 &899912906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -89615770901426438, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
@@ -2790,6 +2822,28 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &1212657744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8157769120288765607, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+  m_PrefabInstance: {fileID: 1355257961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1212657748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212657744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a92fb1c8ea3c840955c7c7c79e324c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_colors:
+  - {r: 0.14, g: 0.14, b: 0.14, a: 0}
+  - {r: 0.14, g: 0.14, b: 0.14, a: 0}
+  - {r: 0.14117648, g: 0.08630589, b: 0.079058826, a: 0}
+  - {r: 0.027999999, g: 0.027999999, b: 0.027999999, a: 0}
 --- !u!1 &1222226428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6531288446364140410, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
@@ -2819,6 +2873,7 @@ GameObject:
   - component: {fileID: 1255706313}
   - component: {fileID: 1255706315}
   - component: {fileID: 1255706314}
+  - component: {fileID: 1255706316}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -2934,7 +2989,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -7641,6 +7696,23 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1255706316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255706312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b3d286d3819c44a8704b184f889d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_simulationSpeeds:
+  - 0.4
+  - 1
+  - 0.6
+  - 0
 --- !u!1 &1339969874
 GameObject:
   m_ObjectHideFlags: 0
@@ -8047,6 +8119,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 888299304}
+    - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 888299310}
+    - targetCorrespondingSourceObject: {fileID: 8157769120288765607, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1212657748}
+    - targetCorrespondingSourceObject: {fileID: 5587583097604799658, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1420080878}
     - targetCorrespondingSourceObject: {fileID: 6531288446364140410, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1222226432}
@@ -8365,6 +8446,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a7ff92b52a4d15835d19e3a7af2de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1420080874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5587583097604799658, guid: 4e504f7d8cd7a6c48ba21bc053e2de5f, type: 3}
+  m_PrefabInstance: {fileID: 1355257961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420080878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420080874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a92fb1c8ea3c840955c7c7c79e324c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_colors:
+  - {r: 0.14, g: 0.14, b: 0.14, a: 0}
+  - {r: 0.14, g: 0.14, b: 0.14, a: 0}
+  - {r: 0.14117648, g: 0.08630589, b: 0.079058826, a: 0}
+  - {r: 0.027999999, g: 0.027999999, b: 0.027999999, a: 0}
 --- !u!1 &1444155121
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,6 +51,6 @@ Material:
     - _Smoothness: 0.127
     - _SpecularHighlights: 0
     m_Colors:
-    - _EmissionColor: {r: 0.142, g: 0.142, b: 0.142, a: 1}
+    - _EmissionColor: {r: 0.135, g: 0.135, b: 0.135, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -5,14 +5,14 @@ using UnityEngine.Events;
 
 namespace Kitty
 {
-    public class DayCycle : MonoBehaviour
+    public class DayNightCycle : MonoBehaviour
     {
-        [OnValueChanged("ChangeTime")]
         [SerializeField] [EnumToggleButtons] private DayTimes m_currentTime;
 
         public DayTimes CurrentTime => m_currentTime;
 
         public UnityEvent<DayTimes> OnTimeChanged;
+        public UnityEvent OnDayCycled;
 
         private void Start()
         {
@@ -22,13 +22,23 @@ namespace Kitty
         private void Update()
         {
             if(!Input.GetKeyDown(KeyCode.P)) { return; }
-            IncrementTime();
+            Increment();
         }
 
-        public void IncrementTime()
+        [Button("Increment")]
+        public void Increment()
         {
             var dayTimesCount = Enum.GetValues(typeof(DayTimes)).Length;
-            m_currentTime = (DayTimes)(((int)m_currentTime + 1) % dayTimesCount);
+            var currentTime = (int)m_currentTime;
+
+            currentTime++;
+            if (currentTime >= dayTimesCount)
+            {
+                currentTime = 0;
+                OnDayCycled?.Invoke();
+            }
+
+            m_currentTime = (DayTimes)currentTime;
             OnTimeChanged?.Invoke(m_currentTime);
         }
 

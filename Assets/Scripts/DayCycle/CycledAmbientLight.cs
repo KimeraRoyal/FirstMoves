@@ -5,15 +5,15 @@ namespace Kitty
 {
     public class CycledAmbientLight : MonoBehaviour
     {
-        private DayCycle m_dayCycle;
+        private DayNightCycle m_dayNightCycle;
 
         [ColorUsage(false, true)]
         [SerializeField] private Color[] m_backgroundColors;
 
         private void Awake()
         {
-            m_dayCycle = GetComponentInParent<DayCycle>();
-            m_dayCycle.OnTimeChanged.AddListener(OnTimeChanged);
+            m_dayNightCycle = GetComponentInParent<DayNightCycle>();
+            m_dayNightCycle.OnTimeChanged.AddListener(OnTimeChanged);
         }
 
         private void OnTimeChanged(DayTimes _time)
