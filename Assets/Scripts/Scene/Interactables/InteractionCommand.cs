@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,9 @@ namespace Kitty
     {
         [SerializeField] private string m_command = "Command";
 
+        [SerializeField] private TaskSelection[] m_require;
+        [SerializeField] private TaskSelection[] m_blockedBy;
+
         public string Command => m_command;
 
         public UnityEvent OnCommandExecuted;
@@ -18,5 +22,14 @@ namespace Kitty
 
         public bool Evaluate(string _command)
             => string.Equals(m_command, _command, StringComparison.CurrentCultureIgnoreCase);
+
+        public bool IsValid()
+            => HasRequirements() && !IsBlocked();
+
+        public bool HasRequirements()
+            => m_require.All(_required => _required.Task.Marked);
+        
+        public bool IsBlocked()
+            => m_blockedBy.Any(_blockedBy => _blockedBy.Task.Marked);
     }
 }

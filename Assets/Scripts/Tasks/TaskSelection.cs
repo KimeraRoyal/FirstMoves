@@ -24,6 +24,8 @@ namespace Kitty
                 return m_tasks;
             }
         }
+        
+        public Task Task => Tasks.AllTasks[m_taskIndex];
 
         public void Mark()
             => Tasks.Mark(m_taskIndex);
@@ -31,6 +33,6 @@ namespace Kitty
         public void Unmark()
             => Tasks.Unmark(m_taskIndex);
 
-        public static implicit operator Task(TaskSelection _selection) => _selection.Tasks.AllTasks[_selection.m_taskIndex];
+        public static implicit operator Task(TaskSelection _selection) => _selection.Task;
     }
 }

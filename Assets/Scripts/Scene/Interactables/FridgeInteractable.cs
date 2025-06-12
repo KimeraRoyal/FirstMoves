@@ -1,4 +1,3 @@
-using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -13,6 +12,7 @@ namespace Kitty
 
         [SerializeField] private InteractionCommand m_openCommand;
         [SerializeField] private InteractionCommand m_closeCommand;
+        [SerializeField] private InteractionCommand m_insideFridgeCommand;
         
         private bool m_isOpen;
 
@@ -45,6 +45,10 @@ namespace Kitty
         }
 
         protected override InteractionCommand[] GetCommands()
-            => new[] { m_isOpen ? m_closeCommand : m_openCommand };
+        {
+            return m_isOpen ?
+                new[] { m_closeCommand, m_insideFridgeCommand } : // Opened
+                new[] { m_openCommand }; // Closed
+        }
     }
 }

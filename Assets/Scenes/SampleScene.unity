@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_movementForce: 2
+  m_movementLocked: 0
 --- !u!1 &484886383
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,52 +886,6 @@ MonoBehaviour:
   - {r: 0.9372549, g: 0.9490196, b: 0.69411767, a: 0}
   - {r: 1, g: 0.5921569, b: 0.09019608, a: 0}
   - {r: 0.078431375, g: 0.043137256, b: 0.12156863, a: 0}
---- !u!1 &564517840
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 564517842}
-  - component: {fileID: 564517841}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &564517841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564517840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 094428529fc550f43abf92e166034e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_selection:
-    m_taskIndex: 6
---- !u!4 &564517842
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564517840}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572956212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,11 +2273,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_openCommand:
     m_command: I want to open the fridge
+    m_require: []
+    m_blockedBy: []
     OnCommandExecuted:
       m_PersistentCalls:
         m_Calls: []
   m_closeCommand:
     m_command: I want to close the fridge
+    m_require: []
+    m_blockedBy: []
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls: []
+  m_insideFridgeCommand:
+    m_command: I want to eat my lunch
+    m_require:
+    - m_taskIndex: 3
+    m_blockedBy: []
     OnCommandExecuted:
       m_PersistentCalls:
         m_Calls: []
@@ -8367,6 +8334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_commands:
   - m_command: I don't want to be awake any more
+    m_require: []
+    m_blockedBy: []
     OnCommandExecuted:
       m_PersistentCalls:
         m_Calls:
@@ -8578,6 +8547,36 @@ MonoBehaviour:
   OnClearMessages:
     m_PersistentCalls:
       m_Calls: []
+  OnShown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 377553479}
+        m_TargetAssemblyTypeName: Kitty.Player, Kitty.Scene
+        m_MethodName: LockMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHidden:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 377553479}
+        m_TargetAssemblyTypeName: Kitty.Player, Kitty.Scene
+        m_MethodName: UnlockMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1406129478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9624,14 +9623,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_commands:
   - m_command: I like my cat a lot
+    m_require: []
+    m_blockedBy: []
     OnCommandExecuted:
       m_PersistentCalls:
         m_Calls: []
   - m_command: I would like to pet my cat
+    m_require: []
+    m_blockedBy: []
     OnCommandExecuted:
       m_PersistentCalls:
         m_Calls: []
   - m_command: My cat is nice
+    m_require: []
+    m_blockedBy: []
     OnCommandExecuted:
       m_PersistentCalls:
         m_Calls: []
@@ -11557,4 +11562,3 @@ SceneRoots:
   - {fileID: 1462001728}
   - {fileID: 484886384}
   - {fileID: 871275804}
-  - {fileID: 564517842}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Kitty
 {
@@ -17,16 +18,13 @@ namespace Kitty
 
         public void AssignCommands(InteractionCommand[] _commands)
         {
-            if (_commands == null || _commands.Length < 1)
-            {
-                Debug.LogWarning("Invalid interaction command list supplied");
-                return;
-            }
+            var validCommands = _commands.Where(_command => _command.IsValid()).ToArray();
+            if (validCommands.Length < 1) { return; }
             
             m_window.Show();
             m_window.ClearMessages();
             
-            m_commands = _commands;
+            m_commands = validCommands;
             foreach (var command in m_commands)
             {
                 m_window.TypeMessage(command.Command);

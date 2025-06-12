@@ -24,6 +24,9 @@ namespace Kitty
         public UnityEvent<string> OnCurrentTypedMessageSent;
         public UnityEvent OnClearMessages;
 
+        public UnityEvent OnShown;
+        public UnityEvent OnHidden;
+
         private void Awake()
         {
             m_input = GetComponentInChildren<TMP_InputField>();
@@ -80,6 +83,9 @@ namespace Kitty
             // TODO: Block player movement while shown
             if(m_shown == m_shouldShow) { return; }
             m_shown = m_shouldShow;
+
+            if (m_shown) { OnShown?.Invoke(); }
+            else { OnHidden?.Invoke(); }
             
             m_canvasGroup.alpha = m_shown ? 1.0f : 0.0f;
             m_canvasGroup.interactable = m_shown;
