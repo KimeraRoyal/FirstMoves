@@ -26,13 +26,28 @@ namespace Kitty
             var currentTime = (int)m_currentTime;
 
             currentTime++;
+            var nextDay = false;
             if (currentTime >= dayTimesCount)
             {
                 currentTime = 0;
-                OnDayCycled?.Invoke();
+                nextDay = true;
             }
 
-            m_currentTime = (DayTimes)currentTime;
+            SetTime((DayTimes)currentTime, nextDay);
+        }
+
+        public void SetMorning(bool _nextDay)
+            => SetTime(DayTimes.Morning, _nextDay);
+
+        public void SetTime(DayTimes _time, bool _nextDay)
+        {
+            if (_nextDay)
+            {
+                OnDayCycled?.Invoke();
+            }
+            else if(m_currentTime == _time) { return; }
+            
+            m_currentTime = _time;
             OnTimeChanged?.Invoke(m_currentTime);
         }
 

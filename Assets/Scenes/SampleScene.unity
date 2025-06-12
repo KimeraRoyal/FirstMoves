@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 857736924}
   - component: {fileID: 857736926}
   m_Layer: 5
-  m_Name: Fade
+  m_Name: Sleep Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2112,6 +2112,21 @@ MonoBehaviour:
   m_fadeOutDuration: 0.2
   m_fadeEase: 1
   m_fadeHoldDuration: 0.65
+  OnNextDay:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 656581485}
+        m_TargetAssemblyTypeName: Kitty.DayNightCycle, Kitty.DayCycle
+        m_MethodName: SetMorning
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &871275801
 GameObject:
   m_ObjectHideFlags: 0

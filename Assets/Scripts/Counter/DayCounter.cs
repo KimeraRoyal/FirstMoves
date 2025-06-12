@@ -36,7 +36,7 @@ namespace Kitty
         {
             m_countdownPeriod = Random.Range(m_minCountdownPeriod, m_maxCountdownPeriod);
 
-            var targetDay = /*Random.Range(*/(int) DayOfWeek.Monday/*, (int) DayOfWeek.Friday + 1)*/;
+            var targetDay = Random.Range((int) DayOfWeek.Monday, (int) DayOfWeek.Friday + 1);
             targetDay = (targetDay - m_countdownPeriod) % c_daysInWeek;
             while (targetDay < 0)
             {

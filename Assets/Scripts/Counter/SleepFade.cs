@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Kitty
@@ -8,8 +9,6 @@ namespace Kitty
     [RequireComponent(typeof(Image))]
     public class SleepFade : MonoBehaviour
     {
-        private DayCounter m_counter;
-
         private Image m_image;
 
         [SerializeField] private float m_fadeInDuration = 0.2f;
@@ -21,10 +20,10 @@ namespace Kitty
 
         private Sequence m_sequence;
 
+        public UnityEvent OnNextDay;
+
         private void Awake()
         {
-            m_counter = FindAnyObjectByType<DayCounter>();
-
             m_image = GetComponent<Image>();
         }
 
@@ -51,8 +50,8 @@ namespace Kitty
 
         private void NextDay()
         {
-            m_counter.Increment();
             m_sleeping = false;
+            OnNextDay?.Invoke();
         }
 
         private void ReleaseFade()
