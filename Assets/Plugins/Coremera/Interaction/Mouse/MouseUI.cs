@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CyberAvebury
+namespace Coremera.Interaction.Mouse
 {
     [RequireComponent(typeof(UIMouseRaycaster))]
     public class MouseUI : Mouse

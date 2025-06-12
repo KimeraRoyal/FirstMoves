@@ -1,4 +1,4 @@
-using CyberAvebury;
+using Coremera.Interaction.Mouse;
 using UnityEngine;
 
 namespace Kitty

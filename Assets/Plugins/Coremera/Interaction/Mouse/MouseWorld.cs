@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CyberAvebury
+namespace Coremera.Interaction.Mouse
 {
     [RequireComponent(typeof(Camera))]
     public abstract class MouseWorld : Mouse

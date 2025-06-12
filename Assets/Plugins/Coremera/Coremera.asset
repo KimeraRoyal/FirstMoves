@@ -18,7 +18,7 @@ MonoBehaviour:
   _Exclusions: []
   _Direction: 2
   _Trigger: 2
-  _LastExecuted: 638843150308075339
+  _LastExecuted: 638853555352700495
   _SynchronizedPaths:
   - AlwaysFaceDirection.cs
   - AlwaysFaceDirection.cs.meta
@@ -28,6 +28,16 @@ MonoBehaviour:
   - BillboardOnAxis.cs.meta
   - Coremera.asmdef
   - Coremera.asmdef.meta
+  - Flags
+  - Flags.meta
+  - Flags/Coremera.Flags.asmdef
+  - Flags/Coremera.Flags.asmdef.meta
+  - Flags/Editor
+  - Flags/Editor.meta
+  - Flags/Editor/FlagsEditor.cs
+  - Flags/Editor/FlagsEditor.cs.meta
+  - Flags/Flags.cs
+  - Flags/Flags.cs.meta
   - Interaction
   - Interaction.meta
   - Interaction/Mouse

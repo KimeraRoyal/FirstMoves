@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace CyberAvebury
+namespace Coremera.Interaction.Mouse
 {
     public class Mouse3D : MouseWorld
     {

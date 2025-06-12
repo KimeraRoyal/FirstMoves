@@ -19,12 +19,6 @@ namespace Kitty
             OnTimeChanged?.Invoke(m_currentTime);
         }
 
-        private void Update()
-        {
-            if(!Input.GetKeyDown(KeyCode.P)) { return; }
-            Increment();
-        }
-
         [Button("Increment")]
         public void Increment()
         {

@@ -1,0 +1,14 @@
+{
+    "name": "Kitty.Tasks",
+    "rootNamespace": "Kitty",
+    "references": ["GUID:c6d93f6b2562ea848857dfab5ab2d75b"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

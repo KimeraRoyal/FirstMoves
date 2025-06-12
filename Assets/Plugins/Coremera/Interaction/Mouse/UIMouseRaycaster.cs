@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace CyberAvebury
+namespace Coremera.Interaction.Mouse
 {
     [RequireComponent(typeof(GraphicRaycaster))]
     public class UIMouseRaycaster : MonoBehaviour
