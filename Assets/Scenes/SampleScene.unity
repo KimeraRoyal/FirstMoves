@@ -8349,7 +8349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_commands:
   - m_command: I don't want to be awake any more
-    m_require: []
+    m_require:
+    - m_taskIndex: 9
     m_blockedBy: []
     OnCommandExecuted:
       m_PersistentCalls:
