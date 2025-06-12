@@ -8,6 +8,8 @@ namespace Kitty
 {
     public class DayCounter : MonoBehaviour
     {
+        private const int c_daysInWeek = 7;
+        
         [EnumToggleButtons]
         [ShowInInspector] [ReadOnly] private CounterState m_state;
         
@@ -17,17 +19,30 @@ namespace Kitty
         
         [ShowInInspector] [ReadOnly] private int m_currentDay;
         [ShowInInspector] [ReadOnly] private int m_displayDate;
+        
+        [EnumToggleButtons]
+        [ShowInInspector] [ReadOnly] private DayOfWeek m_dayOfWeek;
 
         public CounterState CurrentState => m_state;
 
         public int CurrentDisplayDate => m_displayDate;
+        public DayOfWeek DayOfWeek => m_dayOfWeek;
 
         public UnityEvent<CounterState> OnStateUpdated;
         public UnityEvent<int> OnDisplayDateUpdated;
+        public UnityEvent<DayOfWeek> OnDayOfWeekUpdated;
 
         private void Awake()
         {
             m_countdownPeriod = Random.Range(m_minCountdownPeriod, m_maxCountdownPeriod);
+
+            var targetDay = /*Random.Range(*/(int) DayOfWeek.Monday/*, (int) DayOfWeek.Friday + 1)*/;
+            targetDay = (targetDay - m_countdownPeriod) % c_daysInWeek;
+            while (targetDay < 0)
+            {
+                targetDay += c_daysInWeek;
+            }
+            m_dayOfWeek = (DayOfWeek) targetDay;
         }
 
         private void Start()
@@ -39,6 +54,15 @@ namespace Kitty
         public void Increment()
         {
             m_currentDay++;
+            
+            var dayOfWeek = (int)m_dayOfWeek + 1;
+            if (dayOfWeek >= c_daysInWeek)
+            {
+                dayOfWeek -= c_daysInWeek;
+            }
+            m_dayOfWeek = (DayOfWeek) dayOfWeek;
+            OnDayOfWeekUpdated?.Invoke(m_dayOfWeek);
+            
             UpdateDay();
         }
 
