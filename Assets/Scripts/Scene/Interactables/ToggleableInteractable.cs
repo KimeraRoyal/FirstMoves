@@ -4,15 +4,16 @@ using UnityEngine;
 namespace Kitty
 {
     [RequireComponent(typeof(Animator))]
-    public class FridgeInteractable : Interactable
+    public class ToggleableInteractable : Interactable
     {
-        private static readonly int s_openHash = Animator.StringToHash("Open");
-        
         private Animator m_animator;
+
+        [SerializeField] private string m_toggleVariableName = "Open";
+        private int m_toggleHash;
 
         [SerializeField] private InteractionCommand m_openCommand;
         [SerializeField] private InteractionCommand m_closeCommand;
-        [SerializeField] private InteractionCommand m_insideFridgeCommand;
+        [SerializeField] private InteractionCommand[] m_openedCommands;
         
         private bool m_isOpen;
 
@@ -21,6 +22,8 @@ namespace Kitty
         protected override void Awake()
         {
             base.Awake();
+            
+            m_toggleHash = Animator.StringToHash(m_toggleVariableName);
             
             m_animator = GetComponent<Animator>();
             
@@ -41,14 +44,20 @@ namespace Kitty
             if(m_isOpen == _open) { return; }
             m_isOpen = _open;
 
-            m_animator.SetBool(s_openHash, m_isOpen);
+            m_animator.SetBool(m_toggleHash, m_isOpen);
         }
 
         protected override InteractionCommand[] GetCommands()
         {
-            return m_isOpen ?
-                new[] { m_closeCommand, m_insideFridgeCommand } : // Opened
-                new[] { m_openCommand }; // Closed
+            if (!m_isOpen) { return new[] { m_openCommand }; }
+            
+            var commands = new InteractionCommand[1 + m_openedCommands.Length];
+            commands[0] = m_closeCommand;
+            for (var i = 0; i < m_openedCommands.Length; i++)
+            {
+                commands[i + 1] = m_openedCommands[i];
+            }
+            return commands;
         }
     }
 }

@@ -12,13 +12,26 @@ namespace Kitty
 
         [SerializeField] private TaskSelection[] m_require;
         [SerializeField] private TaskSelection[] m_blockedBy;
+        
+        [SerializeField] private TaskSelection[] m_markOnExecute;
+        [SerializeField] private TaskSelection[] m_unmarkOnExecute;
 
         public string Command => m_command;
 
         public UnityEvent OnCommandExecuted;
 
         public void Execute()
-            => OnCommandExecuted?.Invoke();
+        {
+            foreach (var task in m_markOnExecute)
+            {
+                task.Mark();
+            }
+            foreach (var task in m_unmarkOnExecute)
+            {
+                task.Unmark();
+            }
+            OnCommandExecuted?.Invoke();
+        }
 
         public bool Evaluate(string _command)
             => string.Equals(m_command, _command, StringComparison.CurrentCultureIgnoreCase);

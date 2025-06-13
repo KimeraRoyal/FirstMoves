@@ -97,6 +97,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: 4d735f9ced8cf05459f9dc0042f5a937, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Small Photo
     second: {fileID: 2100000, guid: 169684f7bc3dfc64b91c0b228549b286, type: 2}
   - first:

@@ -34,5 +34,9 @@ namespace Kitty
             => Tasks.Unmark(m_taskIndex);
 
         public static implicit operator Task(TaskSelection _selection) => _selection.Task;
+        
+#if UNITY_EDITOR
+        [SerializeField] [HideInInspector] private string m_taskName = ""; // ONLY USED FOR PROPERTY DRAWER
+#endif
     }
 }

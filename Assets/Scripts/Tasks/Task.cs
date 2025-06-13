@@ -8,25 +8,21 @@ namespace Kitty
     public class Task
     {
         [SerializeField] private string m_name = "Task";
-        [SerializeField] private string m_description = "You have to do the task";
-        [FormerlySerializedAs("m_markedOff")] [SerializeField] private bool m_marked;
 
         public string Name => m_name;
-        public string Description => m_description;
         public bool Marked
         {
-            get => m_marked;
+            get => IsMarked.Invoke();
             set
             {
-                if(m_marked == value) { return; }
-
-                m_marked = value;
-                if(m_marked) { OnMarked?.Invoke(); }
+                if(value) { OnMarked?.Invoke(); }
                 else { OnUnmarked?.Invoke(); }
             }
         }
 
         public Action OnMarked;
         public Action OnUnmarked;
+
+        public Func<bool> IsMarked;
     }
 }

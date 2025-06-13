@@ -26,34 +26,41 @@ namespace Kitty
             }
             
             var indexProperty = property.FindPropertyRelative("m_taskIndex");
+            var nameProperty = property.FindPropertyRelative("m_taskName");
                 
-            ShowTaskList(indexProperty,
-                new GUIContent("Task", "The assigned task"),
-                m_tasks);
+            ShowTaskList(indexProperty, nameProperty,
+                new GUIContent("Task", "The assigned task"));
 
             EditorGUI.EndProperty();
         }
         
-        private void ShowTaskList(SerializedProperty property, GUIContent label, IReadOnlyList<Task> entries)
+        private void ShowTaskList(SerializedProperty indexProperty, SerializedProperty nameProperty, GUIContent label)
         {
-            if (property == null)
+            if (indexProperty == null)
             {
                 return;
             }
 
-            var objectNames = new List<GUIContent>();
+            var objectNames = new List<GUIContent> { new("<None>") };
 
-            var selectedIndex = property.intValue + 1;
-
-            objectNames.Add(new GUIContent("<None>"));
-            foreach (var task in entries)
+            var selectedIndex = indexProperty.intValue + 1;
+            var name = nameProperty.stringValue;
+            
+            for (var i = 0; i < m_tasks.Count; i++)
             {
-                objectNames.Add(new GUIContent(task.Name));
+                objectNames.Add(new GUIContent(m_tasks[i].Name));
+                
+                if (m_tasks[i].Name != name) { continue; }
+                
+                selectedIndex = i + 1;
             }
 
             selectedIndex = EditorGUILayout.Popup(label, selectedIndex, objectNames.ToArray());
 
-            property.intValue = selectedIndex - 1;
+            indexProperty.intValue = selectedIndex - 1;
+            name = selectedIndex > 0 ? m_tasks[selectedIndex - 1].Name : "";
+            
+            nameProperty.stringValue = name;
         }
     }
 }
