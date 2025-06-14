@@ -9337,7 +9337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_commands:
-  - m_command: Command
+  - m_command: I have to clean the table up
     m_require:
     - m_taskIndex: 10
       m_taskName: Clean up table
@@ -12919,7 +12919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_commands:
-  - m_command: Command
+  - m_command: I need to wash my dishes
     m_require:
     - m_taskIndex: 11
       m_taskName: Wash dishes
