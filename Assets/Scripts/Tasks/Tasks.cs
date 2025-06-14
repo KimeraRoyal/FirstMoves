@@ -12,6 +12,8 @@ namespace Kitty
 
         private bool m_visibilityDirty;
         private bool m_allVisibleComplete;
+        private bool m_visibleCompletionTimerEnabled;
+        private float m_visibleCompletionTimer;
 
         public IReadOnlyList<Task> AllTasks => m_allTasks;
 
@@ -38,6 +40,7 @@ namespace Kitty
         {
             UpdateVisibility();
             CheckCompletion();
+            CompletionTimer();
         }
 
         public void Mark(int _index)
@@ -61,14 +64,26 @@ namespace Kitty
 
             m_visibleTasks = m_allTasks.Where(_task => _task.IsVisible).ToArray();
             m_allVisibleComplete = false;
+            m_visibleCompletionTimerEnabled = false;
+            m_visibleCompletionTimer = 0.0f;
             OnVisibleTasksUpdated?.Invoke();
         }
 
         private void CheckCompletion()
         {
             if(m_allVisibleComplete || m_visibleTasks.Any(_task => _task.Marked)) { return; }
-
             m_allVisibleComplete = true;
+            m_visibleCompletionTimerEnabled = true;
+        }
+
+        private void CompletionTimer()
+        {
+            if(!m_visibleCompletionTimerEnabled) { return; }
+
+            m_visibleCompletionTimer += Time.deltaTime;
+            if (m_visibleCompletionTimer < 1.0f) { return; }
+
+            m_visibleCompletionTimerEnabled = false;
             OnAllVisibleTasksCompleted?.Invoke();
         }
     }
