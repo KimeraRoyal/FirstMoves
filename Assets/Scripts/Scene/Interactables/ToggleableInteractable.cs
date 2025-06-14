@@ -6,6 +6,8 @@ namespace Kitty
     [RequireComponent(typeof(Animator))]
     public class ToggleableInteractable : Interactable
     {
+        private static int s_instantVariableHash = Animator.StringToHash("Instant");
+        
         private Animator m_animator;
 
         [SerializeField] private string m_toggleVariableName = "Open";
@@ -33,18 +35,25 @@ namespace Kitty
 
         [Button("Open")]
         public void Open()
-            => SetOpen(true);
+            => SetOpen(true, false);
+        
+        public void OpenInstant()
+            => SetOpen(true, true);
 
         [Button("Close")]
         public void Close()
-            => SetOpen(false);
+            => SetOpen(false, false);
+        
+        public void CloseInstant()
+            => SetOpen(false, true);
 
-        private void SetOpen(bool _open)
+        private void SetOpen(bool _open, bool _instant)
         {
             if(m_isOpen == _open) { return; }
             m_isOpen = _open;
 
             m_animator.SetBool(m_toggleHash, m_isOpen);
+            if(_instant) { m_animator.SetTrigger(s_instantVariableHash); }
         }
 
         protected override InteractionCommand[] GetCommands()
