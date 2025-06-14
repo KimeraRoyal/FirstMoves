@@ -18,7 +18,7 @@ MonoBehaviour:
   _Exclusions: []
   _Direction: 2
   _Trigger: 2
-  _LastExecuted: 638853555352700495
+  _LastExecuted: 638854378329704009
   _SynchronizedPaths:
   - AlwaysFaceDirection.cs
   - AlwaysFaceDirection.cs.meta
@@ -38,6 +38,20 @@ MonoBehaviour:
   - Flags/Editor/FlagsEditor.cs.meta
   - Flags/Flags.cs
   - Flags/Flags.cs.meta
+  - FrameAnimation
+  - FrameAnimation.meta
+  - FrameAnimation/FrameAnimatedImage.cs
+  - FrameAnimation/FrameAnimatedImage.cs.meta
+  - FrameAnimation/FrameAnimatedSprite.cs
+  - FrameAnimation/FrameAnimatedSprite.cs.meta
+  - FrameAnimation/FrameAnimation.cs
+  - FrameAnimation/FrameAnimation.cs.meta
+  - FrameAnimation/FrameAnimator.cs
+  - FrameAnimation/FrameAnimator.cs.meta
+  - FrameAnimation/GlitchFrameAnimator.cs
+  - FrameAnimation/GlitchFrameAnimator.cs.meta
+  - FrameAnimation/Kitty.asmdef
+  - FrameAnimation/Kitty.asmdef.meta
   - Interaction
   - Interaction.meta
   - Interaction/Mouse

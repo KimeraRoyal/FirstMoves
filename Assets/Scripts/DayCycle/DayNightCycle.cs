@@ -19,6 +19,16 @@ namespace Kitty
             OnTimeChanged?.Invoke(m_currentTime);
         }
 
+#if UNITY_EDITOR
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Increment();
+            }
+        }
+#endif
+
         [Button("Increment")]
         public void Increment()
         {
@@ -38,6 +48,15 @@ namespace Kitty
 
         public void SetMorning(bool _nextDay)
             => SetTime(DayTimes.Morning, _nextDay);
+
+        public void SetDay(bool _nextDay)
+            => SetTime(DayTimes.Day, _nextDay);
+
+        public void SetEvening(bool _nextDay)
+            => SetTime(DayTimes.Evening, _nextDay);
+
+        public void SetNight(bool _nextDay)
+            => SetTime(DayTimes.Night, _nextDay);
 
         public void SetTime(DayTimes _time, bool _nextDay)
         {

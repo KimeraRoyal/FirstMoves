@@ -42,6 +42,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 445f742811596c94884afeadab71bd5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door Behind
+    second: {fileID: 2100000, guid: 5853960100cb5e24c830c115daf779ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door Frame
+    second: {fileID: 2100000, guid: c74cf206925eaca45ad6d6964115ccce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Fabric
     second: {fileID: 2100000, guid: 6c8970c9fa317884685765a751717bd7, type: 2}
   - first:
