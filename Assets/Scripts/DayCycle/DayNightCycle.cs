@@ -7,11 +7,11 @@ namespace Kitty
 {
     public class DayNightCycle : MonoBehaviour
     {
-        [SerializeField] [EnumToggleButtons] private DayTimes m_currentTime;
+        [SerializeField] [EnumToggleButtons] private TimeOfDay m_currentTime;
 
-        public DayTimes CurrentTime => m_currentTime;
+        public TimeOfDay CurrentTime => m_currentTime;
 
-        public UnityEvent<DayTimes> OnTimeChanged;
+        public UnityEvent<TimeOfDay> OnTimeChanged;
         public UnityEvent OnDayCycled;
 
         private void Start()
@@ -19,20 +19,10 @@ namespace Kitty
             OnTimeChanged?.Invoke(m_currentTime);
         }
 
-#if UNITY_EDITOR
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                Increment();
-            }
-        }
-#endif
-
         [Button("Increment")]
         public void Increment()
         {
-            var dayTimesCount = Enum.GetValues(typeof(DayTimes)).Length;
+            var dayTimesCount = Enum.GetValues(typeof(TimeOfDay)).Length;
             var currentTime = (int)m_currentTime;
 
             currentTime++;
@@ -43,22 +33,22 @@ namespace Kitty
                 nextDay = true;
             }
 
-            SetTime((DayTimes)currentTime, nextDay);
+            SetTime((TimeOfDay)currentTime, nextDay);
         }
 
         public void SetMorning(bool _nextDay)
-            => SetTime(DayTimes.Morning, _nextDay);
+            => SetTime(TimeOfDay.Morning, _nextDay);
 
         public void SetDay(bool _nextDay)
-            => SetTime(DayTimes.Day, _nextDay);
+            => SetTime(TimeOfDay.Day, _nextDay);
 
         public void SetEvening(bool _nextDay)
-            => SetTime(DayTimes.Evening, _nextDay);
+            => SetTime(TimeOfDay.Evening, _nextDay);
 
         public void SetNight(bool _nextDay)
-            => SetTime(DayTimes.Night, _nextDay);
+            => SetTime(TimeOfDay.Night, _nextDay);
 
-        public void SetTime(DayTimes _time, bool _nextDay)
+        public void SetTime(TimeOfDay _time, bool _nextDay)
         {
             if (_nextDay)
             {

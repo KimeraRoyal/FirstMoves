@@ -32,7 +32,7 @@ namespace Kitty
             m_light = GetComponent<Light>();
         }
 
-        private void OnTimeChanged(DayTimes _time)
+        private void OnTimeChanged(TimeOfDay _time)
         {
             var values = m_values[(int)_time];
             m_light.color = values.Filter;
@@ -42,7 +42,7 @@ namespace Kitty
 
         private void OnValidate()
         {
-            var dayTimesCount = Enum.GetValues(typeof(DayTimes)).Length;
+            var dayTimesCount = Enum.GetValues(typeof(TimeOfDay)).Length;
             if(m_values != null && m_values.Length == dayTimesCount) { return; }
             m_values = new LightValues[dayTimesCount];
         }

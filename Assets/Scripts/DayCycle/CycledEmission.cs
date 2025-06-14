@@ -27,7 +27,7 @@ namespace Kitty
             m_propertyBlock = new MaterialPropertyBlock();
         }
 
-        private void OnTimeChanged(DayTimes _time)
+        private void OnTimeChanged(TimeOfDay _time)
         {
             SetEmissionColor(m_colors[(int)_time]);
         }
@@ -41,7 +41,7 @@ namespace Kitty
 
         private void OnValidate()
         {
-            var dayTimesCount = Enum.GetValues(typeof(DayTimes)).Length;
+            var dayTimesCount = Enum.GetValues(typeof(TimeOfDay)).Length;
             if(m_colors != null && m_colors.Length == dayTimesCount) { return; }
             m_colors = new Color[dayTimesCount];
         }

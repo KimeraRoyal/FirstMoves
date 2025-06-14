@@ -1,33 +1,43 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Coremera.Flags;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Kitty
 {
-    [RequireComponent(typeof(Flags))]
     public class Tasks : MonoBehaviour
     {
-        private Flags m_flags;
-        
         [SerializeField] private Task[] m_allTasks;
 
+        private bool m_visibilityDirty;
+
         public IReadOnlyList<Task> AllTasks => m_allTasks;
+        public IReadOnlyList<Task> VisibleTasks => m_allTasks.Where(_task => _task.IsVisible).ToList();
 
         public UnityEvent<int> OnTaskMarked;
         public UnityEvent<int> OnTaskUnmarked;
 
+        public UnityEvent OnVisibleTasksUpdated;
+
         private void Awake()
         {
-            m_flags = GetComponent<Flags>();
-            
             for (var i = 0; i < m_allTasks.Length; i++)
             {
                 var taskIndex = i;
-                m_allTasks[i].OnMarked += () => { MarkFlag(taskIndex); };
-                m_allTasks[i].OnUnmarked += () => { UnmarkFlag(taskIndex); };
-                m_allTasks[i].IsMarked += () => m_flags.IsFlagSet(taskIndex);
+                m_allTasks[i].OnMarked += () => { OnTaskMarked?.Invoke(taskIndex); };
+                m_allTasks[i].OnUnmarked += () => { OnTaskUnmarked?.Invoke(taskIndex); };
+                m_allTasks[i].OnVisibilityChanged += _isVisible => { m_visibilityDirty = true; };
             }
+        }
+
+        private void Update()
+        {
+            if(!m_visibilityDirty) { return; }
+            m_visibilityDirty = false;
+
+            OnVisibleTasksUpdated?.Invoke();
         }
 
         public void Mark(int _index)
@@ -42,18 +52,6 @@ namespace Kitty
             {
                 task.Marked = false;
             }
-        }
-
-        private void MarkFlag(int _index)
-        {
-            m_flags.SetFlag(_index);
-            OnTaskMarked?.Invoke(_index);
-        }
-
-        private void UnmarkFlag(int _index)
-        {
-            m_flags.ClearFlag(_index);
-            OnTaskUnmarked?.Invoke(_index);
         }
     }
 }

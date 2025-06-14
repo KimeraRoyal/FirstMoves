@@ -15,14 +15,14 @@ namespace Kitty
             m_dayNightCycle.OnTimeChanged.AddListener(OnTimeChanged);
         }
 
-        private void OnTimeChanged(DayTimes _time)
+        private void OnTimeChanged(TimeOfDay _time)
         {
             transform.localEulerAngles = m_angles[(int)_time];
         }
 
         private void OnValidate()
         {
-            var dayTimesCount = Enum.GetValues(typeof(DayTimes)).Length;
+            var dayTimesCount = Enum.GetValues(typeof(TimeOfDay)).Length;
             if(m_angles != null && m_angles.Length == dayTimesCount) { return; }
             m_angles = new Vector3[dayTimesCount];
         }

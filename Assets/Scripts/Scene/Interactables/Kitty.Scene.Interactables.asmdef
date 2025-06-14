@@ -1,7 +1,7 @@
 {
     "name": "Kitty.Scene.Interactables",
     "rootNamespace": "Kitty",
-    "references": ["GUID:927ea392459afe34dba4298f75b70517","GUID:2d10c5aa3b860924b85380ffcb737405","GUID:cc10c7619c6fb0245bd62377c51a19c2"],
+    "references": ["GUID:927ea392459afe34dba4298f75b70517","GUID:2d10c5aa3b860924b85380ffcb737405","GUID:cc10c7619c6fb0245bd62377c51a19c2","GUID:c1906e0175ff51b449a7f3023deeb153","GUID:20b473bbf0d4ef74d867f845b23905b0"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

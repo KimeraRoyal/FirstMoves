@@ -1,11 +1,10 @@
 {
-    "name": "Kitty.Tasks",
+    "name": "Kitty.Progression",
     "rootNamespace": "Kitty",
     "references": [
-        "GUID:c6d93f6b2562ea848857dfab5ab2d75b",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:20b473bbf0d4ef74d867f845b23905b0",
         "GUID:c1906e0175ff51b449a7f3023deeb153",
-        "GUID:20b473bbf0d4ef74d867f845b23905b0"
+        "GUID:cc10c7619c6fb0245bd62377c51a19c2"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

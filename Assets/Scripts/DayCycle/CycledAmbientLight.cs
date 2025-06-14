@@ -16,14 +16,14 @@ namespace Kitty
             m_dayNightCycle.OnTimeChanged.AddListener(OnTimeChanged);
         }
 
-        private void OnTimeChanged(DayTimes _time)
+        private void OnTimeChanged(TimeOfDay _time)
         {
             RenderSettings.ambientLight = m_backgroundColors[(int)_time];
         }
 
         private void OnValidate()
         {
-            var dayTimesCount = Enum.GetValues(typeof(DayTimes)).Length;
+            var dayTimesCount = Enum.GetValues(typeof(TimeOfDay)).Length;
             if(m_backgroundColors != null && m_backgroundColors.Length == dayTimesCount) { return; }
             m_backgroundColors = new Color[dayTimesCount];
         }

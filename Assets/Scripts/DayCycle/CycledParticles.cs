@@ -20,7 +20,7 @@ namespace Kitty
             m_particles = GetComponent<ParticleSystem>();
         }
 
-        private void OnTimeChanged(DayTimes _time)
+        private void OnTimeChanged(TimeOfDay _time)
         {
             var speed = m_simulationSpeeds[(int)_time];
             if (speed < 0.001f && m_particles.isPlaying)
@@ -39,7 +39,7 @@ namespace Kitty
 
         private void OnValidate()
         {
-            var dayTimesCount = Enum.GetValues(typeof(DayTimes)).Length;
+            var dayTimesCount = Enum.GetValues(typeof(TimeOfDay)).Length;
             if(m_simulationSpeeds != null && m_simulationSpeeds.Length == dayTimesCount) { return; }
             m_simulationSpeeds = new float[dayTimesCount];
         }

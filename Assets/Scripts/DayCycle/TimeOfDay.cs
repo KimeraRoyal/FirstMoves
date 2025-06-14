@@ -1,6 +1,6 @@
 ﻿namespace Kitty
 {
-    public enum DayTimes
+    public enum TimeOfDay
     {
         Morning,
         Day,
