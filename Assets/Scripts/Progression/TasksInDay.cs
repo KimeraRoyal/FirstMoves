@@ -33,7 +33,7 @@ namespace Kitty
             foreach (var task in m_tasks.AllTasks)
             {
                 var valid = task.IsValid(m_day.DayOfWeek, m_time.CurrentTime, m_day.CurrentState, m_day.CurrentDisplayDate);
-                if(valid) { task.Marked = true; }
+                task.Marked = valid;
                 task.IsVisible = valid;
             }
         }

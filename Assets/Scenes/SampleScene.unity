@@ -3512,16 +3512,6 @@ MonoBehaviour:
     m_validStates: 4
     m_minDayCounterInState: -1
     m_maxDayCounterInState: 14
-  - m_name: Test
-    m_text: Test
-    m_marked: 0
-    m_isVisible: 0
-    m_mirage: 1
-    m_validDays: 127
-    m_validTimes: 15
-    m_validStates: 7
-    m_minDayCounterInState: -1
-    m_maxDayCounterInState: -1
   m_allVisibleCompleteProgressionDelay: 1
   m_mirageCompletionDelay: 1
   OnTaskMarked:
@@ -3836,7 +3826,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - m_command: I want to fill my cat's food bowl
+  - m_command: I want to fill my cat's food bowlll
     m_require:
     - m_taskIndex: 13
       m_taskName: Feed the cat (fake)
