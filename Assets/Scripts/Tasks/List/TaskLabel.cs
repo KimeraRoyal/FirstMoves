@@ -21,7 +21,7 @@ namespace Kitty
 
         private void OnTrackedTaskChanged(Task _task)
         {
-            m_text.text = _task.Name;
+            m_text.text = _task.Text;
         }
     }
 }

@@ -18,7 +18,7 @@ MonoBehaviour:
   _Exclusions: []
   _Direction: 2
   _Trigger: 2
-  _LastExecuted: 638854378329704009
+  _LastExecuted: 638855986212421062
   _SynchronizedPaths:
   - AlwaysFaceDirection.cs
   - AlwaysFaceDirection.cs.meta
@@ -34,6 +34,8 @@ MonoBehaviour:
   - Flags/Coremera.Flags.asmdef.meta
   - Flags/Editor
   - Flags/Editor.meta
+  - Flags/Editor/Coremera.Flags.Editor.asmdef
+  - Flags/Editor/Coremera.Flags.Editor.asmdef.meta
   - Flags/Editor/FlagsEditor.cs
   - Flags/Editor/FlagsEditor.cs.meta
   - Flags/Flags.cs
