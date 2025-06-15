@@ -3491,7 +3491,7 @@ MonoBehaviour:
     m_validTimes: 5
     m_validStates: 4
     m_minDayCounterInState: -1
-    m_maxDayCounterInState: 5
+    m_maxDayCounterInState: 4
   - m_name: Refill the cat's water (fake)
     m_text: Refill my cat's water
     m_marked: 0
@@ -3501,7 +3501,7 @@ MonoBehaviour:
     m_validTimes: 5
     m_validStates: 4
     m_minDayCounterInState: -1
-    m_maxDayCounterInState: 5
+    m_maxDayCounterInState: 4
   - m_name: Pet the cat (fake)
     m_text: Pet my cat
     m_marked: 0
@@ -3512,6 +3512,176 @@ MonoBehaviour:
     m_validStates: 4
     m_minDayCounterInState: -1
     m_maxDayCounterInState: 14
+  - m_name: I miss it, you know.
+    m_text: I miss it, you know.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 1
+    m_validStates: 4
+    m_minDayCounterInState: 5
+    m_maxDayCounterInState: 5
+  - m_name: His eyes, his whiskers,
+    m_text: His eyes, his whiskers,
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 2
+    m_validStates: 4
+    m_minDayCounterInState: 5
+    m_maxDayCounterInState: 5
+  - m_name: His beautiful fur,
+    m_text: His beautiful fur,
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 4
+    m_validStates: 4
+    m_minDayCounterInState: 5
+    m_maxDayCounterInState: 5
+  - m_name: The way he purred,
+    m_text: The way he purred,
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 8
+    m_validStates: 4
+    m_minDayCounterInState: 5
+    m_maxDayCounterInState: 5
+  - m_name: His meows.
+    m_text: His meows.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 1
+    m_validStates: 4
+    m_minDayCounterInState: 6
+    m_maxDayCounterInState: 6
+  - m_name: Now he sits, still,
+    m_text: Now he sits, still,
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 2
+    m_validStates: 4
+    m_minDayCounterInState: 6
+    m_maxDayCounterInState: 6
+  - m_name: In a box on our table.
+    m_text: In a box on our table.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 4
+    m_validStates: 4
+    m_minDayCounterInState: 6
+    m_maxDayCounterInState: 6
+  - m_name: I half expect
+    m_text: I half expect
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 8
+    m_validStates: 4
+    m_minDayCounterInState: 6
+    m_maxDayCounterInState: 6
+  - m_name: That when I open it
+    m_text: That when I open it
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 1
+    m_validStates: 4
+    m_minDayCounterInState: 7
+    m_maxDayCounterInState: 7
+  - m_name: He'll be inside, alive.
+    m_text: He'll be inside, alive.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 1
+    m_validStates: 4
+    m_minDayCounterInState: 7
+    m_maxDayCounterInState: 7
+  - m_name: Surprise!
+    m_text: Surprise!
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 2
+    m_validStates: 4
+    m_minDayCounterInState: 7
+    m_maxDayCounterInState: 7
+  - m_name: Nothing ever has to change.
+    m_text: Nothing ever has to change.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 4
+    m_validStates: 4
+    m_minDayCounterInState: 7
+    m_maxDayCounterInState: 7
+  - m_name: But I know it will just be ashes.
+    m_text: But I know it will just be ashes.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 8
+    m_validStates: 4
+    m_minDayCounterInState: 7
+    m_maxDayCounterInState: 7
+  - m_name: And we will scatter them to the wind.
+    m_text: And we will scatter them to the wind.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 1
+    m_validStates: 4
+    m_minDayCounterInState: 8
+    m_maxDayCounterInState: 8
+  - m_name: I miss you.
+    m_text: I miss you.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 2
+    m_validStates: 4
+    m_minDayCounterInState: 8
+    m_maxDayCounterInState: 8
+  - m_name: I love you.
+    m_text: I love you.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 4
+    m_validStates: 4
+    m_minDayCounterInState: 8
+    m_maxDayCounterInState: 8
+  - m_name: Goodbye.
+    m_text: Goodbye.
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 8
+    m_validStates: 4
+    m_minDayCounterInState: 8
+    m_maxDayCounterInState: 8
   m_allVisibleCompleteProgressionDelay: 1
   m_mirageCompletionDelay: 1
   OnTaskMarked:
@@ -3826,7 +3996,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - m_command: I want to fill my cat's food bowlll
+  - m_command: I want to fill my cat's food bowl
     m_require:
     - m_taskIndex: 13
       m_taskName: Feed the cat (fake)
@@ -12052,7 +12222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_daysBeforeFade: 2
-  m_fadePerDay: 0.045
+  m_fadePerDay: 0.0715
 --- !u!1 &1532834883
 GameObject:
   m_ObjectHideFlags: 0
