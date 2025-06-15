@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1a2366cf58d1547a24d9edf5c470d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_toggleVariableName: Open
   m_openCommand:
     m_command: I need to open the oven
@@ -378,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1a2366cf58d1547a24d9edf5c470d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_toggleVariableName: Open
   m_openCommand:
     m_command: I want to turn my laptop on
@@ -491,6 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_commands:
   - m_command: I want to read some books
     m_require:
@@ -724,6 +727,7 @@ GameObject:
   - component: {fileID: 377553475}
   - component: {fileID: 377553478}
   - component: {fileID: 377553479}
+  - component: {fileID: 377553480}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -863,6 +867,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_movementForce: 2
   m_movementLocked: 0
+--- !u!114 &377553480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377553473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c303c067acf342a1839728101da57ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxDistanceFromObject: 2.5
 --- !u!1 &434099974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_commands:
   - m_command: I want to read some books
     m_require:
@@ -3144,6 +3162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c391672a0c75e4c9c0de597700604c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_openCommand:
     m_command: I have to leave to go to work now
     m_require:
@@ -3800,6 +3819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1a2366cf58d1547a24d9edf5c470d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_toggleVariableName: Open
   m_openCommand:
     m_command: I want to open the fridge
@@ -3971,6 +3991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_commands:
   - m_command: I want to fill my cat's food bowl
     m_require:
@@ -4380,6 +4401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_commands:
   - m_command: I want to fill my cat's water bowl
     m_require:
@@ -10062,6 +10084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_commands:
   - m_command: I have to clean the table up
     m_require:
@@ -11139,6 +11162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_commands:
   - m_command: I don't want to be awake any more
     m_require:
@@ -11611,6 +11635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1a2366cf58d1547a24d9edf5c470d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_toggleVariableName: On
   m_openCommand:
     m_command: I want to turn on the TV
@@ -12766,6 +12791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_commands:
   - m_command: I like my cat a lot
     m_require: []
@@ -13765,6 +13791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca76407bada80845b5b8f6ab47a164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   m_commands:
   - m_command: I need to wash my dishes
     m_require:

@@ -18,7 +18,7 @@ MonoBehaviour:
   _Exclusions: []
   _Direction: 2
   _Trigger: 2
-  _LastExecuted: 638855986212421062
+  _LastExecuted: 638856205974294381
   _SynchronizedPaths:
   - AlwaysFaceDirection.cs
   - AlwaysFaceDirection.cs.meta

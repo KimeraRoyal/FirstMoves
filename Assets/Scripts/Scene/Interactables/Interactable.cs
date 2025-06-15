@@ -8,11 +8,20 @@ namespace Kitty
     {
         private TypingInteractions m_interactions;
         
+        private PlayerInteractionPoint m_player;
+        [SerializeField] private Collider m_collider;
+        
         private ClickableObject m_clickable;
 
         protected virtual void Awake()
         {
             m_interactions = FindAnyObjectByType<TypingInteractions>();
+            
+            m_player = FindAnyObjectByType<PlayerInteractionPoint>();
+            if (!m_collider)
+            {
+                m_collider = GetComponent<Collider>();
+            }
             
             m_clickable = GetComponent<ClickableObject>();
             
@@ -20,7 +29,10 @@ namespace Kitty
         }
 
         private void OnClicked()
-            => m_interactions.AssignCommands(GetCommands());
+        {
+            if(m_collider && !m_player.ColliderInRange(m_collider)) { return; }
+            m_interactions.AssignCommands(GetCommands());
+        }
 
         protected abstract InteractionCommand[] GetCommands();
     }
