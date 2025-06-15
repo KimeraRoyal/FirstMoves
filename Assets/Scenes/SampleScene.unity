@@ -3356,24 +3356,27 @@ MonoBehaviour:
     m_text: Feed the cat
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 5
-    m_validStates: 7
+    m_validStates: 3
     m_minDayCounterInState: -1
     m_maxDayCounterInState: -1
   - m_name: Refill the cat's water
     m_text: Refill the cat's water
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 5
-    m_validStates: 7
+    m_validStates: 3
     m_minDayCounterInState: -1
     m_maxDayCounterInState: -1
   - m_name: Get breakfast from the fridge
     m_text: Get breakfast from the fridge
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 1
     m_validStates: 7
@@ -3383,15 +3386,17 @@ MonoBehaviour:
     m_text: Pet the cat
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 15
-    m_validStates: 7
+    m_validStates: 3
     m_minDayCounterInState: -1
     m_maxDayCounterInState: -1
   - m_name: Say goodbye
     m_text: Say goodbye
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 15
     m_validStates: 2
@@ -3401,6 +3406,7 @@ MonoBehaviour:
     m_text: Get lunch from the fridge
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 2
     m_validStates: 7
@@ -3410,6 +3416,7 @@ MonoBehaviour:
     m_text: Go to work
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 62
     m_validTimes: 1
     m_validStates: 7
@@ -3419,6 +3426,7 @@ MonoBehaviour:
     m_text: Read some books
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 2
     m_validStates: 7
@@ -3428,6 +3436,7 @@ MonoBehaviour:
     m_text: Do some coursework
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 2
     m_validStates: 7
@@ -3437,6 +3446,7 @@ MonoBehaviour:
     m_text: Put dinner on
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 2
     m_validStates: 7
@@ -3446,6 +3456,7 @@ MonoBehaviour:
     m_text: Clean up table
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 4
     m_validStates: 7
@@ -3455,6 +3466,7 @@ MonoBehaviour:
     m_text: Wash dishes
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 4
     m_validStates: 7
@@ -3464,11 +3476,54 @@ MonoBehaviour:
     m_text: Go to bed
     m_marked: 0
     m_isVisible: 0
+    m_mirage: 0
     m_validDays: 127
     m_validTimes: 8
     m_validStates: 7
     m_minDayCounterInState: -1
     m_maxDayCounterInState: -1
+  - m_name: Feed the cat (fake)
+    m_text: Feed my cat
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 0
+    m_validDays: 127
+    m_validTimes: 5
+    m_validStates: 4
+    m_minDayCounterInState: -1
+    m_maxDayCounterInState: 5
+  - m_name: Refill the cat's water (fake)
+    m_text: Refill my cat's water
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 0
+    m_validDays: 127
+    m_validTimes: 5
+    m_validStates: 4
+    m_minDayCounterInState: -1
+    m_maxDayCounterInState: 5
+  - m_name: Pet the cat (fake)
+    m_text: Pet my cat
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 15
+    m_validStates: 4
+    m_minDayCounterInState: -1
+    m_maxDayCounterInState: 14
+  - m_name: Test
+    m_text: Test
+    m_marked: 0
+    m_isVisible: 0
+    m_mirage: 1
+    m_validDays: 127
+    m_validTimes: 15
+    m_validStates: 7
+    m_minDayCounterInState: -1
+    m_maxDayCounterInState: -1
+  m_allVisibleCompleteProgressionDelay: 1
+  m_mirageCompletionDelay: 1
   OnTaskMarked:
     m_PersistentCalls:
       m_Calls: []
@@ -3757,7 +3812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_commands:
-  - m_command: I want to fill the cat's food bowl
+  - m_command: I want to fill my cat's food bowl
     m_require:
     - m_taskIndex: 0
       m_taskName: Feed the cat
@@ -3781,6 +3836,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - m_command: I want to fill my cat's food bowl
+    m_require:
+    - m_taskIndex: 13
+      m_taskName: Feed the cat (fake)
+    m_blockedBy: []
+    m_markOnExecute: []
+    m_unmarkOnExecute:
+    - m_taskIndex: 13
+      m_taskName: Feed the cat (fake)
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &899912919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4154,7 +4221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_commands:
-  - m_command: I want to fill the cat's water bowl
+  - m_command: I want to fill my cat's water bowl
     m_require:
     - m_taskIndex: 1
       m_taskName: Refill the cat's water
@@ -4178,6 +4245,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - m_command: I want to fill my cat's water bowl
+    m_require:
+    - m_taskIndex: 14
+      m_taskName: Refill the cat's water (fake)
+    m_blockedBy: []
+    m_markOnExecute: []
+    m_unmarkOnExecute:
+    - m_taskIndex: 14
+      m_taskName: Refill the cat's water (fake)
+    OnCommandExecuted:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &982042209
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,10 +10,17 @@ namespace Kitty
         [SerializeField] private Task[] m_allTasks;
         private Task[] m_visibleTasks;
 
+        [SerializeField] private float m_allVisibleCompleteProgressionDelay = 1.0f;
         private bool m_visibilityDirty;
         private bool m_allVisibleComplete;
         private bool m_visibleCompletionTimerEnabled;
         private float m_visibleCompletionTimer;
+
+        [SerializeField] private float m_mirageCompletionDelay = 1.0f;
+        private Task[] m_mirageTasks;
+        private bool m_miragesReady;
+        private bool m_miragesComplete;
+        private float m_mirageCompletionTimer;
 
         public IReadOnlyList<Task> AllTasks => m_allTasks;
 
@@ -39,6 +46,10 @@ namespace Kitty
         private void Update()
         {
             UpdateVisibility();
+            
+            CheckMirages();
+            MirageTimer();
+            
             CheckCompletion();
             CompletionTimer();
         }
@@ -67,6 +78,34 @@ namespace Kitty
             m_visibleCompletionTimerEnabled = false;
             m_visibleCompletionTimer = 0.0f;
             OnVisibleTasksUpdated?.Invoke();
+            
+            m_mirageTasks = m_visibleTasks.Where(_task => _task.Mirage).ToArray();
+            m_miragesReady = false;
+            m_miragesComplete = false;
+        }
+
+        private void CheckMirages()
+        {
+            if(m_miragesReady || m_miragesComplete) { return; }
+
+            if (m_visibleTasks.Any(_task => !_task.Mirage && _task.Marked)) { return; }
+            m_miragesReady = true;
+        }
+
+        private void MirageTimer()
+        {
+            if(!m_miragesReady) { return; }
+
+            m_mirageCompletionTimer += Time.deltaTime;
+            if(m_mirageCompletionTimer < m_mirageCompletionDelay) { return; }
+
+            m_miragesReady = false;
+            m_miragesComplete = true;
+
+            foreach (var mirageTask in m_mirageTasks)
+            {
+                mirageTask.Unmark();
+            }
         }
 
         private void CheckCompletion()
@@ -81,7 +120,7 @@ namespace Kitty
             if(!m_visibleCompletionTimerEnabled) { return; }
 
             m_visibleCompletionTimer += Time.deltaTime;
-            if (m_visibleCompletionTimer < 1.0f) { return; }
+            if (m_visibleCompletionTimer < m_allVisibleCompleteProgressionDelay) { return; }
 
             m_visibleCompletionTimerEnabled = false;
             OnAllVisibleTasksCompleted?.Invoke();

@@ -1,7 +1,6 @@
 ﻿using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Kitty
 {
@@ -12,6 +11,7 @@ namespace Kitty
         [SerializeField] private string m_text = "Task";
         [SerializeField] private bool m_marked;
         [SerializeField] private bool m_isVisible;
+        [SerializeField] private bool m_mirage;
 
         [Header("Time & Day")]
         [SerializeField] [EnumToggleButtons] private DaysOfWeek m_validDays = DaysOfWeek.All;
@@ -48,6 +48,8 @@ namespace Kitty
                 OnVisibilityChanged?.Invoke(m_isVisible);
             }
         }
+
+        public bool Mirage => m_mirage;
 
         public DaysOfWeek ValidDays => m_validDays;
         public TimesOfDay ValidTimes => m_validTimes;
